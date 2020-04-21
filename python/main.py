@@ -179,14 +179,8 @@ while(cap.isOpened()):
             spot08="free"
         else: spot08 = "occupied"
 
-
-
-
-
         dbThread=threading.Thread(target=updateSpots,args=(spot,occupied,spot01,spot02,spot03,spot04,spot05,spot06,spot07,spot08))
         dbThread.start()
-
-        #updateSpots(spot,occupied,test)
 
 
 

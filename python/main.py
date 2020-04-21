@@ -182,8 +182,6 @@ while(cap.isOpened()):
         dbThread=threading.Thread(target=updateSpots,args=(spot,occupied,spot01,spot02,spot03,spot04,spot05,spot06,spot07,spot08))
         dbThread.start()
 
-
-
     # write the output frame
     if config['save_video']:
         if video_cur_frame % 35 == 0: # take every 30 frames

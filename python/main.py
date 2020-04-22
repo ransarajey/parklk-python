@@ -21,6 +21,7 @@ config = {'save_video': False,
           'min_area_motion_contour': 60,
           'park_sec_to_wait': 3,
           'start_frame': 400} #35000
+pushDB = False
 
 # Set capture device or file
 cap = cv2.VideoCapture(fn)
@@ -96,6 +97,7 @@ while(cap.isOpened()):
             # If detected a change in parking status, save the current time
             if status != parking_status[ind] and parking_buffer[ind]==None:
                 parking_buffer[ind] = video_cur_pos
+                pushDB=True
 
             # If status is still different than the one saved and counter is open
             elif status != parking_status[ind] and parking_buffer[ind]!=None:
@@ -178,10 +180,14 @@ while(cap.isOpened()):
         if parking_status[7]==True:
             spot08="0"
         else: spot08 = "1"
-
+    
+    if pushDB:
         dbThread=threading.Thread(target=updateSpots,args=(spot,occupied,spot01,spot02,spot03,spot04,spot05,spot06,spot07,spot08))
         dbThread.start()
-
+        print("updated here")
+        pushDB=False
+        print(pushDB)
+    
     # write the output frame
     if config['save_video']:
         if video_cur_frame % 35 == 0: # take every 30 frames

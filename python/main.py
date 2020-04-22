@@ -148,36 +148,36 @@ while(cap.isOpened()):
 
     if config['updateDatabase']:
         if parking_status[0]==True:
-            spot01="free"
-        else: spot01 = "occupied"
+            spot01="0"
+        else: spot01 = "1"
 
         if parking_status[1]==True:
-            spot02="free"
-        else: spot02 = "occupied"
+            spot02="0"
+        else: spot02 = "1"
 
         if parking_status[2]==True:
-            spot03="free"
-        else: spot03 = "occupied"
+            spot03="0"
+        else: spot03 = "1"
 
         if parking_status[3]==True:
-            spot04="free"
-        else: spot04 = "occupied"
+            spot04="0"
+        else: spot04 = "1"
 
         if parking_status[4]==True:
-            spot05="free"
-        else: spot05 = "occupied"
+            spot05="0"
+        else: spot05 = "1"
 
         if parking_status[5]==True:
-            spot06="free"
-        else: spot06 = "occupied"
+            spot06="0"
+        else: spot06 = "1"
 
         if parking_status[6]==True:
-            spot07="free"
-        else: spot07 = "occupied"
+            spot07="0"
+        else: spot07 = "1"
 
         if parking_status[7]==True:
-            spot08="free"
-        else: spot08 = "occupied"
+            spot08="0"
+        else: spot08 = "1"
 
         dbThread=threading.Thread(target=updateSpots,args=(spot,occupied,spot01,spot02,spot03,spot04,spot05,spot06,spot07,spot08))
         dbThread.start()

@@ -8,10 +8,10 @@ from db import updateSpots
 
 
 # fn = r"../datasets/cut.mpg"
-fn = r"./datasets/parkinglot_1_480p.mp4"
+fn = r"../datasets/parkinglot_1_480p.mp4"
 # fn_yaml = r"../datasets/CUHKSquare.yml"
-fn_yaml = r"./datasets/parking2.yml"
-fn_out = r"./datasets/output.avi"
+fn_yaml = r"../datasets/parking2.yml"
+fn_out = r"../datasets/output.avi"
 config = {'save_video': False,
           'text_overlay': True,
           'parking_overlay': True,
